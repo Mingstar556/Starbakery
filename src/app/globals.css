@@ -144,7 +144,7 @@
 /* Seamless sketch paper blend */
 .sketch-blend {
   mix-blend-mode: multiply;
-  filter: contrast(112%) brightness(98%);
+  filter: contrast(106%);
 }
 
 /* Ambient wash */

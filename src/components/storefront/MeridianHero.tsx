@@ -271,11 +271,11 @@ export default function MeridianHero() {
           className="relative z-10 w-[300px] sm:w-[460px] md:w-[540px] h-[300px] sm:h-[420px] md:h-[480px] flex items-center justify-center select-none"
         >
           <Image
-            src="/sketches/bakery-facade-sketch.jpg"
+            src="/sketches/bakery-facade-sketch.webp"
             alt="Authentic Old Money Architectural Bakery Sketch"
             fill
             priority
-            className="object-contain object-center sketch-blend pointer-events-none drop-shadow-sm"
+            className="object-contain object-center sketch-blend pointer-events-none"
             sizes="(max-width: 768px) 320px, 540px"
           />
         </motion.div>

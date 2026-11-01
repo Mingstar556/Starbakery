@@ -70,10 +70,10 @@ export default function StorySection() {
               {/* Hand-sketched Wheat & Heraldry Sketch */}
               <div className="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden mb-6 border border-[#1c1917]/10 bg-[#fafaf9]">
                 <Image
-                  src="/sketches/wheat-heraldry-sketch.jpg"
+                  src="/sketches/wheat-heraldry-sketch.webp"
                   alt="Heritage Wheat Stalks and Aristocratic Seal Graphite Sketch"
                   fill
-                  className="object-contain p-2"
+                  className="object-contain p-2 sketch-blend"
                   sizes="(max-w: 600px) 100vw, 500px"
                 />
                 <div className="absolute bottom-3 left-3 px-3 py-1 rounded-lg bg-white/90 border border-[#1c1917]/15 text-xs text-[#1c1917] font-mono shadow-xs">

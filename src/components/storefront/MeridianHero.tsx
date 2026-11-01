@@ -105,9 +105,9 @@ export default function MeridianHero() {
         const y = Math.sin(rad) * radii.ry;
         xKeyframes.push(x);
         yKeyframes.push(y);
-        // Depth effect: breads in front of the house (y > 0) are slightly larger and above
-        scaleKeyframes.push(y > 0 ? 1.08 : 0.88);
-        zIndexKeyframes.push(y > 0 ? 30 : 10);
+        // Floating above house sketch: breads remain in front (z-index >= 30) with slight perspective scale
+        scaleKeyframes.push(y > 0 ? 1.08 : 0.95);
+        zIndexKeyframes.push(y > 0 ? 40 : 30);
       }
 
       return { x: xKeyframes, y: yKeyframes, scale: scaleKeyframes, zIndex: zIndexKeyframes };
@@ -268,7 +268,7 @@ export default function MeridianHero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-20 w-[300px] sm:w-[460px] md:w-[540px] h-[300px] sm:h-[420px] md:h-[480px] flex items-center justify-center select-none"
+          className="relative z-10 w-[300px] sm:w-[460px] md:w-[540px] h-[300px] sm:h-[420px] md:h-[480px] flex items-center justify-center select-none"
         >
           <Image
             src="/sketches/bakery-facade-sketch.jpg"
@@ -281,7 +281,7 @@ export default function MeridianHero() {
         </motion.div>
 
         {/* 
-          ANIMATED BREADS MOVING IN A CIRCLE AROUND THE HOUSE SKETCH
+          ANIMATED BREADS MOVING IN A CIRCLE AROUND THE HOUSE SKETCH (FLOATING ABOVE)
         */}
         {ARTISAN_ORBIT.map((bread, index) => {
           const anim = orbitAnimations[index];
@@ -300,7 +300,7 @@ export default function MeridianHero() {
                 repeat: Infinity,
                 ease: 'linear',
               }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-pointer"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto cursor-pointer z-30"
               onMouseEnter={() => setActiveBread(bread)}
             >
               <div className="group relative flex flex-col items-center">
